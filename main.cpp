@@ -148,6 +148,7 @@ int main(int argc, char *argv[])
     if(argc > 4) {
         if(strncmp(auth_option, argv[4], sizeof(auth_option))==0) {
             while(1) {
+                // Authentication frame
                 send_auth(handle, ap_mac_addr, station_mac_addr);
                 usleep(500000); // 0.5s
             }
